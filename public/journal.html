@@ -5,5 +5,11 @@
 </head>
 <body>
 	<h1>Online Journal Entry</h1>
+	<form action="/entry" method="get" id="entryForm">
+		Date:<input type="date" name="date"><br><br>
+		Rating (1 to 10):<input type="number" name="rating" min="1" max="10"><br><br>
+	</form>
+	Entry:<textarea name="entry" form="entryForm" rows="4" cols="50"></textarea><br><br>
+	<input type="submit" value="Submit" form="entryForm"><br>
 </body>
 </html>

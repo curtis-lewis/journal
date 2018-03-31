@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Journal</title>
+	<title>Login</title>
 	<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
 </head>
 <body>
@@ -11,12 +11,14 @@
 			<li id="nav_item"><a id="nav_link" href="">Logout</a></li>
 			<li id="nav_item"><a id="nav_link" href="">Previous Entries</a></li>
 		</ul>
-	<h1>Entry</h1>
-	<form action="/entry" method="get" id="entryForm">
-		Date: <input type="date" name="date"><br><br>
-		Rating (1 to 10): <input type="number" name="rating" min="1" max="10"><br><br>
-		Entry: <textarea name="entry" form="entryForm" rows="20" cols="100"></textarea><br><br>
-		<input type="submit" value="Submit" form="entryForm" class="button"><br>
-	</form>
+	<h1>Login</h1>
+	<div id="login">
+		<form action="/login" method="post" id="loginForm">
+			Username: <input type="text" name="username"><br><br>
+			Password: <input type="password" name="password"><br><br>
+			<input type="submit" value="Login" class="button"><br>
+		</form>
+	</div>
+
 </body>
 </html>

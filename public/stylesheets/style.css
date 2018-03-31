@@ -1,0 +1,97 @@
+/* style.css */
+
+/* font imports */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+/* ------------ */
+
+
+body {
+	font-family: 'Roboto', sans-serif;
+	padding-left: 12em;
+	padding-right: 12em;
+}
+
+.content {
+	padding-right: 2em;
+}
+
+.footer {
+	color: #6e7177;
+}
+
+.title {
+	font-weight: bold;
+	font-size: 3em;
+}
+
+#nav_link:hover {
+	background-color: #2d323a;
+}
+
+.p_link:hover {
+	font-weight: bold;
+}
+
+#nav_bar {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	background-color: #3e4551;
+	overflow: hidden;
+}
+
+#nav_item {
+	float: left;
+	border-right: 1px solid #bbb;
+}
+
+#nav_link {
+	display: block;
+	text-align: center;
+	padding: 16px;
+	text-decoration: none;
+	color: white;
+}
+
+#image_carousel {
+	text-align: center;
+}
+
+.mySlides {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	height: 100%;
+	width: 800px;
+}
+
+#arrows {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 40%;
+}
+
+.button {
+	font-family: 'Roboto', sans-serif;
+	background-color: #3e4551;
+	color: white;
+	text-align: center;
+	border: none;
+	text-decoration: none;
+	padding: 10px 28px;
+}
+
+.button:hover {
+	background-color: #2d323a;
+	cursor: pointer;
+}
+
+button {
+	background-color: #3e4551;
+	color: white;
+}
+
+button:hover {
+	background-color: #2d323a;
+}

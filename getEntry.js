@@ -45,19 +45,19 @@ function getEntry(req, res) {
 	
 	res.render('display', data);
 
-	// const query = {
-	// 	name: 'insert-entry',
-	// 	text: 'INSERT INTO ENTRY (user_id, post_date, rating, content) VALUES ($1, $2, $3, $4)',
-	// 	values: [1,  date, rating, entry]
-	// }
+	const query = {
+		name: 'insert-entry',
+		text: 'INSERT INTO ENTRY (user_id, post_date, rating, content) VALUES ($1, $2, $3, $4)',
+		values: [1,  date, rating, entry]
+	}
 
-	// client.query(query, (err, res) => {
-	// 	if (err) {
-	// 		console.log(err.stack)
-	// 	} else {
-	// 		console.log(res.rows)
-	// 	}
-	// })
+	client.query(query, (err, res) => {
+		if (err) {
+			console.log(err.stack)
+		} else {
+			console.log(res.rows)
+		}
+	})
 }
 
 module.exports = {getEntry: getEntry};

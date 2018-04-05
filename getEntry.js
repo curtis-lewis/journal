@@ -1,29 +1,13 @@
 function getEntry(req, res) {
-	// const { Pool, Client } = require('pg')
-
-	// const pool = new Pool({
-	// 	user: 'j_user',
-	// 	host: 'localhost',
-	// 	database: 'journal',
-	// 	password: 'j_pass',
-	// 	port: 5432,
-	// })
-
-	// const client = new Client({
-	// 	user: 'j_user',
-	// 	host: 'localhost',
-	// 	database: 'journal',
-	// 	password: 'j_pass',
-	// 	port: 5432,
-	// })
-	// client.connect()
-
+	// get variables from the form
 	var date = req.query.date;
 	var rating = req.query.rating;
 	var entry = req.query.entry;
 
+	// set form variables to data
 	var data = {date: date, rating: rating, entry: entry};
 
+	// begin server connection
 	const { Client } = require('pg');
 
 	const client = new Client({
@@ -33,12 +17,14 @@ function getEntry(req, res) {
 
 	client.connect();
 
+	// insert query
 	const query = {
 		name: 'insert-entry',
 		text: 'INSERT INTO ENTRY (user_id, post_date, rating, content) VALUES ($1, $2, $3, $4)',
 		values: [1,  date, rating, entry]
 	};
 
+	// run query
 	client.query(query, (err, res) => {
 		if (err) {
 			console.log(err.stack)
@@ -48,7 +34,9 @@ function getEntry(req, res) {
 		client.end();
 	});
 
+	// show results page (mostly for debugging)
 	res.render('display', data);
 }
 
+// export getEntry()
 module.exports = {getEntry: getEntry};

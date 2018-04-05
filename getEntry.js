@@ -27,7 +27,7 @@ function getEntry(req, res) {
 
 	client.connect();;
 
-	client.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
+	client.query('SELECT * FROM entry;', (err, res) => {
   		if (err) throw err;
   		for (let row of res.rows) {
     		console.log(JSON.stringify(row));

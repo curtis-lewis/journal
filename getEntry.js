@@ -20,7 +20,7 @@ function getEntry(req, res) {
 
 	const { Client } = require('pg');
 
-	const client = new const client = new Client({
+	const client = new Client({
   		connectionString: process.env.DATABASE_URL,
   		ssl: true,
 	});

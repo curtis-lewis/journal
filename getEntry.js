@@ -18,6 +18,12 @@ function getEntry(req, res) {
 	// })
 	// client.connect()
 
+	var date = req.query.date;
+	var rating = req.query.rating;
+	var entry = req.query.entry;
+
+	var data = {date: date, rating: rating, entry: entry};
+
 	const { Client } = require('pg');
 
 	const client = new Client({
@@ -25,31 +31,13 @@ function getEntry(req, res) {
   		ssl: true,
 	});
 
-	client.connect();;
-
-	client.query('SELECT * FROM entry;', (err, res) => {
-  		if (err) throw err;
-  		for (let row of res.rows) {
-    		console.log(JSON.stringify(row));
-  		}
-  		client.end();
-	});
-
-
-
-	var date = req.query.date;
-	var rating = req.query.rating;
-	var entry = req.query.entry;
-
-	var data = {date: date, rating: rating, entry: entry};
-	
-	res.render('display', data);
+	client.connect();
 
 	const query = {
 		name: 'insert-entry',
 		text: 'INSERT INTO ENTRY (user_id, post_date, rating, content) VALUES ($1, $2, $3, $4)',
 		values: [1,  date, rating, entry]
-	}
+	};
 
 	client.query(query, (err, res) => {
 		if (err) {
@@ -57,7 +45,10 @@ function getEntry(req, res) {
 		} else {
 			console.log(res.rows)
 		}
-	})
+		client.end();
+	});
+
+	res.render('display', data);
 }
 
 module.exports = {getEntry: getEntry};

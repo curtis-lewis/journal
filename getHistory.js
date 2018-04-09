@@ -21,8 +21,8 @@ function getHistory(req, res) {
 		if (err) {
 			console.log(err.stack);
 		} else {
-			console.log(res.rows);
-			results = res.rows;
+			results = res.rows
+			console.log(results);
 		}
 		client.end();
 	});

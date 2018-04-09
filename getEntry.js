@@ -36,6 +36,7 @@ function getEntry(req, res) {
 
 	// show results page (mostly for debugging)
 	res.render('display', data);
+	
 }
 
 // export getEntry()

@@ -22,7 +22,7 @@ function getHistory(req, res) {
 			console.log(err.stack)
 		} else {
 			console.log(res.rows)
-			setValue(res.rows)
+			test = res.rows;
 		}
 		client.end();
 	});
@@ -31,9 +31,9 @@ function getHistory(req, res) {
 	res.render('history', data);
 }
 
-function setValue(value) {
-	test = value;
-	console.log(test);
-}
+// function setValue(value) {
+// 	test = value;
+// 	console.log(test);
+// }
 
 module.exports = {getHistory: getHistory};

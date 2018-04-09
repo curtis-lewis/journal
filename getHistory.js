@@ -20,7 +20,7 @@ function getHistory(req, res) {
 			console.log(err.stack)
 		} else {
 			console.log(res.rows)
-			test = res.rows;
+			var test = res.rows;
 		}
 		client.end();
 	});

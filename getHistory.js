@@ -19,10 +19,11 @@ function getHistory(req, res) {
 	// run query
 	client.query(query, (err, res) => {
 		if (err) {
-			console.log(err.stack)
+			console.log(err.stack);
 		} else {
-			console.log(res.rows)
+			console.log(res.rows);
 			test = res.rows;
+			alert(res.rows);
 		}
 		client.end();
 	});

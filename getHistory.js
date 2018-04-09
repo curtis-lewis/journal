@@ -1,6 +1,8 @@
 function getHistory(req, res) {
 	const { Client } = require('pg');
 
+	var test = [];
+
 	const client = new Client({
   		connectionString: process.env.DATABASE_URL,
   		ssl: true,
@@ -20,13 +22,18 @@ function getHistory(req, res) {
 			console.log(err.stack)
 		} else {
 			console.log(res.rows)
-			var test = res.rows;
+			setValue(rows)
 		}
 		client.end();
 	});
 
 	var data = {test: test};	
 	res.render('history', data);
+}
+
+function setValue(value) {
+	test = value;
+	console.log(test);
 }
 
 module.exports = {getHistory: getHistory};

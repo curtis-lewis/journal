@@ -17,7 +17,7 @@ function getEntry(req, res) {
 
 	client.connect();
 
-	// insert query
+	// prepare query
 	const query = {
 		name: 'insert-entry',
 		text: 'INSERT INTO ENTRY (user_id, post_date, rating, content) VALUES ($1, $2, $3, $4)',
@@ -36,7 +36,7 @@ function getEntry(req, res) {
 
 	// show results page (mostly for debugging)
 	res.render('display', data);
-	
+
 }
 
 // export getEntry()

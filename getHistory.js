@@ -31,9 +31,4 @@ function getHistory(req, res) {
 	res.render('history', data);
 }
 
-// function setValue(value) {
-// 	test = value;
-// 	console.log(test);
-// }
-
 module.exports = {getHistory: getHistory};

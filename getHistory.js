@@ -27,7 +27,7 @@ function getHistory(req, res) {
 		client.end();
 	});
 
-	results = JSON.stringify(results);
+	results = toString(results);
 	console.log("JSON: " + results);
 
 	var data = {results: results};	

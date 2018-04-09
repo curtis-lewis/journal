@@ -28,6 +28,7 @@ function getHistory(req, res) {
 	});
 
 	results = JSON.stringify(results);
+	console.log(results);
 
 	var data = {results: results};	
 	res.render('history', data);

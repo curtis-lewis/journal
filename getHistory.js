@@ -23,7 +23,6 @@ function getHistory(req, res) {
 		} else {
 			console.log(res.rows);
 			test = res.rows;
-			alert(res.rows);
 		}
 		client.end();
 	});

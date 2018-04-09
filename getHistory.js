@@ -1,7 +1,7 @@
 function getHistory(req, res) {
 	const { Client } = require('pg');
 
-	var content = [];
+	var results = [];
 
 	const client = new Client({
   		connectionString: process.env.DATABASE_URL,
@@ -27,7 +27,7 @@ function getHistory(req, res) {
 		client.end();
 	});
 
-	var data = {test: test[0]};	
+	var data = {results: results};	
 	res.render('history', data);
 }
 

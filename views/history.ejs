@@ -11,6 +11,11 @@
 			<li id="nav_item"><a id="nav_link" href="history.html">Previous Entries</a></li>
 		</ul>
 	<h1>Previous Entiries</h1>
-	<p>Message: <%= test %></p>
+	<ul>
+	<%for (var result in results){%>
+  		<li><%=result%>:<%=results[result]%></li>    
+  	<%}%>
+	</ul>
+	<!--<p>Message: <%= test %></p>-->
 </body>
 </html>
